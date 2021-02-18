@@ -1,0 +1,439 @@
+<html>
+    <head>
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.p1.p4.container:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+</style>
+
+    </head>
+<link rel="stylesheet" type="text/css" href="bedroom_final.css">
+<body>
+
+<div id="lg" style='display: none;position:fixed;text-shadow:2px 2px 0 rgba(128,128,128,0.5);top:20%;right:1%;padding: 0 25px;height: 60px;font-size: 28px;line-height: 50px;border-radius: 25px;background-color: ghostwhite;z-index:10;'><img src='acc1.png' width='5%' style='float: left;margin: 0 10px 0 -25px;height: 60px;width: 60px;border-radius: 50%;'><p id="lg1" style="font-size: 28px;display: inline"></p><i style='font-size:15px;color:blue;text-shadow:0 0 0 black;'> (Logged in)</i></div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br><br>        
+ <a href="abc.html">Home</a>
+  <a href="gallery_final.html">Gallery</a>
+  <a href="#">Rooms</a><ul><a href="living_room.html"><li>Living room</li></a><a href="bedroom_final.html"><li>Bedroom</li></a><a href="stairs.html"><li>Stairs</li></a><a href="bathroom_final.html"><li>Bathroom</li></a>
+  <a href="kitchen_final.html"><li>Kitchen</li></a>
+  </ul>
+  <a href="About_us.html">About Us</a>
+</div><div id="main"><div class="main">
+    <div class="d1"><span style="font-size:30px;cursor:pointer" onclick="openNav()"><pre><div class="b1"> &#9776;  <b2>V I C T O R I A    H A G A N </b2> | <b style="color:darksilver"> I N T E R I O R S</b></div></pre></span></div></div>
+
+<br><br><br><br><br><br>    
+<h2 style="text-align:center">Victoria Hagan Collections</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="b1.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="b2.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="b3.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="b4.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+    
+ <div class="column">
+    <img src="bat2.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="bat1.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="bat3.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="bat5.jpg" style="width:100%;padding-bottom:10px" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+   <div class="column">
+    <img src="kit1.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="kit2.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="kit3.jpg" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="kit5.jpg" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="b1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="b2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="b3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="b4.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="bat2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="bat1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="bat3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="bat5.jpg" style="width:100%;height:0%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="kit1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="kit2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="kit3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="kit5.jpg" style="width:100%;height:0%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="b1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Scandinavian Bedroom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="b2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Vintage Bedroom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="b3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Eclectic Bedroom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="b4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Traditional Style">
+    </div>
+     <div class="column">
+      <img class="demo cursor" src="bat2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Executive Restroom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="bat1.jpg" style="width:100%" onclick="currentSlide(6)" alt="Classic Restroom">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="bat3.jpg" style="width:100%" onclick="currentSlide(7)" alt="Minimalistic">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="bat5.jpg" style="width:100%" onclick="currentSlide(8)" alt="Next Kitchens">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="kit1.jpg" style="width:100%" onclick="currentSlide(9)" alt="Barbeque Kitchen">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="kit2.jpg" style="width:100%" onclick="currentSlide(10)" alt="Beach Kitchen">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="kit3.jpg" style="width:100%" onclick="currentSlide(11)" alt="Castle styled Kitchen">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="kit5.jpg" style="width:100%" onclick="currentSlide(12)" alt="Next Bedrooms">
+    </div>
+  </div>
+</div>
+<div class="dt" style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+    
+<div class="ft1">&copy; Full Stack Project 2020.<div class="ic"> <img id="ic" src=fb.png width="40px" onmouseover="change(this.id,0)" onmouseout="back(this.id,0)"> <img id="ic1" src=gog.png width="40px" onmouseover="change(this.id,1)" onmouseout="back(this.id,1)"> <img id="ic2" src=inst.png width="40px" onmouseover="change(this.id,2)" onmouseout="back(this.id,2)"> <img id="ic3" src=twt.png width="40px" onmouseover="change(this.id,3)" onmouseout="back(this.id,3)"> <img id="ic4" src=ml.png width="40px" onmouseover="change(this.id,4)" onmouseout="back(this.id,4)"> <img id="ic5" src=yt.png width="40px" onmouseover="change(this.id,5)" onmouseout="back(this.id,5)"></div></div></div>
+<script>
+    function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.6)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+     ims=["fb1.png","gog1.png","inst1.png","twt1.png","ml1.png","yt1.png"]
+    ims1=["fb.png","gog.png","inst.png","twt.png","ml.png","yt.png"]
+function change(x,i)
+    {
+        var y=document.getElementById(x);
+        y.src=ims[i];
+    }
+function back(x,i)
+    {
+        var y=document.getElementById(x);
+        y.src=ims1[i];
+    }
+if(document.cookie){
+    var a =document.getElementById("lg");
+    a.style.display="inline-block";
+    var x=document.cookie;
+    x=x.split(";")
+    console.log(x)
+    for(var i=0;i<x.length;i++){
+     var a1=x[i];
+     a1=a1.split("=");
+     if(a1[0]=="uname"){
+         console.log(a1[1]);
+         var b=document.getElementById("lg1");
+         b.innerHTML=a1[1];
+     }
+     else {
+    document.getElementById("achu").innerHTML="";
+}
+    }
+}
+</script>
+</body>
+</html>
